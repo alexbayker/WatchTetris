@@ -228,16 +228,27 @@ public class Logic: ObservableObject
                             self.checkFullLine()
                         }
                     }
-                    self.fallen = self.preview;
-                    self.preview = Logic.generateNewFigure();
-                    self.generatePreviewArray()
-                    self.shapes.append(self.fallen);
-                    
-                    if self.checkLose()
+                    var has100 = false
+                    for square in self.fallen.squares
                     {
-                        //GUI.setScoreInTitle(score, -1);
+                        if (square.y == 100)
+                        {
+                            has100 = true
+                            break
+                        }
+                    }
+                    if !has100 && self.checkLose()
+                    {
                         self.lose = true;
                     }
+                    else
+                    {
+                        self.fallen = self.preview;
+                        self.preview = Logic.generateNewFigure();
+                        self.generatePreviewArray()
+                        self.shapes.append(self.fallen);
+                    }
+                    
                     self.lock.unlock()
                 }
             }
