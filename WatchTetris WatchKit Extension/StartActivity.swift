@@ -50,7 +50,7 @@ struct StartActivity: View {
                                     Button(action: {
                                         self.numberofscreen = Screens.gamingscreen
                                     }){
-                                        Text("Resume Game").foregroundColor(MyColor.vipstatusgoldcolor)
+                                        Text(Locale.preferredLanguages.count > 0 && "\(Locale.preferredLanguages[0])".hasPrefix("ru") ? "Продолжить" : "Resume Game").foregroundColor(MyColor.vipstatusgoldcolor)
                                     }.frame(width: StartActivity.screenwidth * 2/3).overlay(RoundedRectangle(cornerRadius: 10).stroke(MyColor.vipstatusgoldcolor, lineWidth: 4)).shadow(color: MyColor.vipstatusgoldcolor, radius: 10, x: 10, y: 10)
                                 }
                                 
@@ -58,13 +58,13 @@ struct StartActivity: View {
                                     StartActivity.logic = Logic()
                                     self.numberofscreen = Screens.gamingscreen
                                 }){
-                                    Text("Start Game").foregroundColor(Color.black)
+                                    Text(Locale.preferredLanguages.count > 0 && "\(Locale.preferredLanguages[0])".hasPrefix("ru") ? "Новая игра" : "Start Game").foregroundColor(Color.black)
                                 }.frame(width: StartActivity.screenwidth * 2/3).overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.black, lineWidth: 4)).shadow(color: Color.black, radius: 10, x: 10, y: 10)
                                 
                                 Button(action: {
                                     self.numberofscreen = Screens.recordsscreen
                                 }){
-                                    Text("Records")
+                                    Text(Locale.preferredLanguages.count > 0 && "\(Locale.preferredLanguages[0])".hasPrefix("ru") ? "Рекорды" : "Records")
                                         .foregroundColor(Color.black)
                                 }.frame(width: StartActivity.screenwidth * 2/3).overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.black, lineWidth: 4)).shadow(color: Color.black, radius: 10, x: 10, y: 10)
                                 
@@ -112,18 +112,18 @@ struct StartActivity: View {
                     }
                     
                     Group {
-                        Text("Game Over!")
+                        Text(Locale.preferredLanguages.count > 0 && "\(Locale.preferredLanguages[0])".hasPrefix("ru") ? "Проиграл!" : "Game Over!")
                         
                         Spacer()
                         
-                        Text("Your Score: \(self.lastscore)")
+                        Text(Locale.preferredLanguages.count > 0 && "\(Locale.preferredLanguages[0])".hasPrefix("ru") ? "Ваши очки: \(self.lastscore)" : "Your Score: \(self.lastscore)")
                         
                         Spacer()
                         
                     }.foregroundColor(MyColor.vipstatusgoldcolor).font(.system(size: GamingActivity.fontsize, weight: .heavy, design: .default)).lineLimit(1)
                     
                     Group {
-                        TextField("Your name", text: self.$winnername, onCommit: {
+                        TextField(Locale.preferredLanguages.count > 0 && "\(Locale.preferredLanguages[0])".hasPrefix("ru") ? "Ваше имя" : "Your name", text: self.$winnername, onCommit: {
                             let _ = self.saveRecord()
                         }).multilineTextAlignment(.center).background(MyColor.halftransparentwhitecolor).cornerRadius(5).padding(.horizontal, 16)
                         
@@ -132,7 +132,7 @@ struct StartActivity: View {
                         Button(action: {
                             let _ = self.saveRecord()
                         }){
-                            Text("Save your score!").padding(.horizontal, 8).padding(.vertical, 4).background(MyColor.vipstatusgoldcolor).foregroundColor(.white).cornerRadius(5)
+                            Text(Locale.preferredLanguages.count > 0 && "\(Locale.preferredLanguages[0])".hasPrefix("ru") ? "Сохранить" : "Save your score!").padding(.horizontal, 8).padding(.vertical, 4).background(MyColor.vipstatusgoldcolor).foregroundColor(.white).cornerRadius(5)
                         }.buttonStyle(PlainButtonStyle())
                     }.foregroundColor(.white).font(.system(size: GamingActivity.fontsize, design: .default)).lineLimit(1)
                     

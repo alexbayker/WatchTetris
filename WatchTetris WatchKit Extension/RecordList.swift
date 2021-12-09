@@ -22,7 +22,7 @@ struct RecordList: View {
                 VStack (alignment: .center) {
                     Spacer()
                     
-                    Text("You don't\nhave records!").multilineTextAlignment(.center).foregroundColor(MyColor.vipstatusgoldcolor).font(.system(size: GamingActivity.fontsize, weight: .heavy, design: .default)).lineLimit(2)
+                    Text(Locale.preferredLanguages.count > 0 && "\(Locale.preferredLanguages[0])".hasPrefix("ru") ? "Нет сохраненных\nрекордов!" : "You don't\nhave records!").multilineTextAlignment(.center).foregroundColor(MyColor.vipstatusgoldcolor).font(.system(size: GamingActivity.fontsize, weight: .heavy, design: .default)).lineLimit(2)
                     
                     Spacer()
                 }

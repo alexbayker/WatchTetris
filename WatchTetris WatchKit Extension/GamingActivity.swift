@@ -71,11 +71,11 @@ struct GamingActivity: View {
                         {
                             Spacer()
                             
-                            Text("Level:").foregroundColor(MyColor.bazanetredcolor).font(.system(size: GamingActivity.fontsize, design: .default)).lineLimit(1)
+                            Text(Locale.preferredLanguages.count > 0 && "\(Locale.preferredLanguages[0])".hasPrefix("ru") ? "Уровень:" : "Level:").foregroundColor(MyColor.bazanetredcolor).font(.system(size: GamingActivity.fontsize, design: .default)).lineLimit(1)
                             
                             Text("\(self.logic.level)").foregroundColor(MyColor.bazanetredcolor).font(.system(size: GamingActivity.fontsize, weight: .heavy, design: .default)).lineLimit(1)
                             
-                            Text("Score:").foregroundColor(MyColor.vipstatusgoldcolor).font(.system(size: GamingActivity.fontsize, design: .default)).lineLimit(1)
+                            Text(Locale.preferredLanguages.count > 0 && "\(Locale.preferredLanguages[0])".hasPrefix("ru") ? "Очки:" : "Score:").foregroundColor(MyColor.vipstatusgoldcolor).font(.system(size: GamingActivity.fontsize, design: .default)).lineLimit(1)
                             
                             Text("\(self.logic.score)").foregroundColor(MyColor.vipstatusgoldcolor).font(.system(size: GamingActivity.fontsize, weight: .heavy, design: .default)).lineLimit(1)
                             
