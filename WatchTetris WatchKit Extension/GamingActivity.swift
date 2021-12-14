@@ -81,9 +81,7 @@ struct GamingActivity: View {
                                     }
                                 }
                             }
-                        }.frame(width: CGFloat(Logic.width) * self.getSizeSquare(StartActivity.screenwidth, StartActivity.screenheight), height: CGFloat(Logic.height) * self.getSizeSquare(StartActivity.screenwidth, StartActivity.screenheight)).background(Color.black).border(self.logic.pause ? Color.gray : Color.blue, width: 1).focusable(true).digitalCrownRotation(self.$scrollamount/*, from: 0, through: 1, isHapticFeedbackEnabled: true*/).onTapGesture {
-                            self.pause()
-                        }
+                        }.frame(width: CGFloat(Logic.width) * self.getSizeSquare(StartActivity.screenwidth, StartActivity.screenheight), height: CGFloat(Logic.height) * self.getSizeSquare(StartActivity.screenwidth, StartActivity.screenheight)).background(Color.black).border(self.logic.pause ? Color.gray : Color.blue, width: 1).focusable(true).digitalCrownRotation(self.$scrollamount/*, from: 0, through: 1, isHapticFeedbackEnabled: true*/)
                         
                         Spacer()
                         
@@ -109,7 +107,9 @@ struct GamingActivity: View {
                                         }
                                     }
                                 }
-                            }.frame(width: 4 * self.getSizeSquare(StartActivity.screenwidth, StartActivity.screenheight), height: 4 * self.getSizeSquare(StartActivity.screenwidth, StartActivity.screenheight)).background(Color.black).border(Color.blue, width: 1)
+                            }.frame(width: 4 * self.getSizeSquare(StartActivity.screenwidth, StartActivity.screenheight), height: 4 * self.getSizeSquare(StartActivity.screenwidth, StartActivity.screenheight)).background(Color.black).border(Color.blue, width: 1).onTapGesture {
+                                self.pause()
+                            }
                             
                             VStack (alignment: .center)
                             {

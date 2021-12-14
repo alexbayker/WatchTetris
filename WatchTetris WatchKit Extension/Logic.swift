@@ -9,7 +9,7 @@ public class Logic: ObservableObject
     public static let height       = 20;
     public static let width        = 10;
     public static let previewwidth = 4;
-    public static let startspeed   = 700;
+    public static let startspeed   = 600;
     
     @Published public var fallen: Shape;
     
@@ -398,12 +398,28 @@ public class Logic: ObservableObject
                     || (score > 11000 && level == 11)
                     || (score > 12000 && level == 12)
                     || (score > 13000 && level == 13)
-                    || (score > 14000 && level == 14))
+                    || (score > 14000 && level == 14)
+                    || (score > 15000 && level == 15)
+                    || (score > 16000 && level == 16)
+                    || (score > 17000 && level == 17)
+                    || (score > 18000 && level == 18)
+                    || (score > 19000 && level == 19)
+                    || (score > 20000 && level == 20)
+                    || (score > 21000 && level == 21)
+                    || (score > 22000 && level == 22)
+                    || (score > 23000 && level == 23)
+                    || (score > 24000 && level == 24)
+                    || (score > 25000 && level == 25)
+                    || (score > 26000 && level == 26)
+                    || (score > 27000 && level == 27)
+                    || (score > 28000 && level == 28)
+                    || (score > 29000 && level == 29)
+                    || (score > 30000 && level == 30))
                 {
                     level += 1;
-                    if timing >= 50
+                    if timing >= 61
                     {
-                        timing -= 50;
+                        timing -= 30;
                     }
                 }
                 score -= 1;
