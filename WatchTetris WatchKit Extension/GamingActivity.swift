@@ -25,6 +25,26 @@ struct GamingActivity: View {
     
     var body: some View {
         
+        let drag = DragGesture().onEnded
+        {
+            if $0.translation.width > 50
+            {
+                right()
+            }
+            else if $0.translation.width < -50
+            {
+                left()
+            }
+            else if $0.translation.height > 50
+            {
+                down()
+            }
+            else if $0.translation.height < -50
+            {
+                move()
+            }
+        }
+        
         DispatchQueue.main.async {
             //print("SELF AMOUNT: \(self.scrollamount) \(abs(self.scrollamount - self.oldamount))")
             if abs(self.scrollamount - self.oldamount) > 10 && abs(GamingActivity.currentTimeInMiliseconds() - self.olddate) > 10
@@ -178,7 +198,7 @@ struct GamingActivity: View {
                     StartActivity.logic.run()
                 }
             }
-        }.navigationBarBackButtonHidden(true)
+        }.navigationBarBackButtonHidden(true).gesture(drag)
     }
     
     func getSizeButton(_ widthcontainer: CGFloat) -> CGFloat
