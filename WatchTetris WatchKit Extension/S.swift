@@ -158,7 +158,7 @@ public class S: Shape
         {
             if (squares[3].x < 9 &&
                 StartActivity.logic.getFromArray(squares[1].x + 1, squares[1].y) == " " &&
-                StartActivity.logic.getFromArray(squares[3].x + 1, squares[1].y) == " ")
+                StartActivity.logic.getFromArray(squares[3].x + 1, squares[3].y) == " ")
             {
                 StartActivity.logic.setInArray(squares[0].x, squares[0].y, " ");
                 StartActivity.logic.setInArray(squares[2].x, squares[2].y, " ");
